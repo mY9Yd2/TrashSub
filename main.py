@@ -30,14 +30,14 @@ import json
 import urllib.request
 import urllib.parse
 
-def fix_text(text: str) -> str:
+def fix_text(text):
     text = text.replace(r'\n', '')
     text = text.replace(r'\N', '')
     # remove { foobar foobar }
     text = re.sub('{.*?}', '', text)
     return text
 
-def read_deepL_API_key() -> str:
+def read_deepL_API_key():
     if not os.path.exists('deepL.txt'):
         print('deepL.txt not exist')
         sys.exit(1)
@@ -45,7 +45,7 @@ def read_deepL_API_key() -> str:
         # TODO: check?
         return f.readline().strip()
 
-def translate_deepL(text: str, deepL_API_key: str, target_lang: str) -> str:
+def translate_deepL(text, deepL_API_key, target_lang):
     headers = {
         'User-Agent': 'TrashSub',
         'Host': 'api-free.deepl.com'
@@ -62,7 +62,7 @@ def translate_deepL(text: str, deepL_API_key: str, target_lang: str) -> str:
 
     return resp['translations'][0]['text']
 
-def main() -> None:
+def main():
     deepL_API_key = read_deepL_API_key()
     target_lang = 'HU'
 

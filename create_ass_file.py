@@ -24,8 +24,9 @@
 #
 
 # TODO: write a better script
+# TODO: empty lines "crash"
 
-def main() -> None:
+def main():
     dialogues = []
 
     with open('output.txt', 'r') as f:

@@ -1,4 +1,4 @@
-## About  
+## Info  
 TrashSub: auto translate ASS dialogues with DeepL (free) API  
 You have to use your own API KEY:  
 Create `deepL.txt` file, put your private API KEY there and save it.  
